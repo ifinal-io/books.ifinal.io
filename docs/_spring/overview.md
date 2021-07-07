@@ -1,8 +1,9 @@
 ---
 formatterOff: "@formatter:off"
-title: Spring makes Java 
+title: Spring Overview
 subtitle: overview 
 description: overview
+summary: Spring makes Java
 typed: 
     - simple.
     - modern.
