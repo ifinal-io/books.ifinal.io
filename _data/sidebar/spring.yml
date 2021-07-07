@@ -1,4 +1,4 @@
-logo: /assets/images/logos/spring.svg
+logo: /assets/img/logos/spring.svg
 name: Spring
 menus:
   - id: overview
@@ -33,7 +33,7 @@ menus:
       - id: application-context
         name: 'ApplicationContext'
       - id: configurable-application-context
-        name: '应用上下文刷新流程'
+        name: '可配置应用上下文'
       - id: annotation-config-application-context
         name: 'AnnotationConfigApplicationContext'
       - id: bean-factory-post-processor

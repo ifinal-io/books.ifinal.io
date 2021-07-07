@@ -1,21 +1,20 @@
 {% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | split: '/'%}
 {% assign lang = paths[1] %}
-<div id="sidebar" class="sidebar" data-color="green" data-background-color="black" data-image="/assets/img/sidebar-1.jpg">
+<div id="sidebar" class="sidebar" data-color="green" data-background-color="black"
+     data-image="https://static.ifinal.io/images/sidebar/sidebar-1.jpg">
   <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
     Tip 2: you can also add an image using data-image tag
 -->
   <div class="logo">
-    <a class="simple-text logo-mini" href="{{ site.url }}">
-      <img src="/assets/img/favicons/favicon-32x32.png" height="32" width="32"/>
+    <a class="simple-text logo-mini" href="#">
+      <img :src="sidebar.logo" height="32" width="32"/>
     </a>
-    <a class="simple-text logo-normal" style="text-transform: none" href="{{ site.url }}">
-      iFinal
-    </a>
+    <a class="simple-text logo-normal" style="text-transform: none" href="#" v-text="sidebar.name"></a>
   </div>
   <div class="sidebar-wrapper">
     {% include sidebar/sidebar-menu.html %}
   </div>
-  <div class="sidebar-background" style="background-image: url('/assets/img/sidebar-1.jpg');"></div>
+  <div class="sidebar-background" style="background-image: url('https://static.ifinal.io/images/sidebar/sidebar-1.jpg');"></div>
 </div>

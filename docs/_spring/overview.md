@@ -38,9 +38,9 @@ Spring 通过提供强大的框架设计，极大地提高Java的开发效率，
 
 |        名称        |                      分析版本/最新版本                       |
 | :----------------: | :----------------------------------------------------------: |
-|   `Spring Boot`    | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot?label=2.4.4) |
-| `Spring Framework` | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework/spring?label=5.3.5) |
-|   `Spring Cloud`   | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.cloud/spring-cloud-dependencies?label=2020.0.2) |
+|   `Spring Boot`    | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot?label=2.5.2) |
+| `Spring Framework` | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework/spring?label=5.3.8) |
+|   `Spring Cloud`   | ![Maven Central](https://img.shields.io/maven-central/v/org.springframework.cloud/spring-cloud-dependencies?label=2020.0.3) |
 
 
 ## 目录

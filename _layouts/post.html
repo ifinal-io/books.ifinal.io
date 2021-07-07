@@ -19,7 +19,7 @@
             <a href="#" class="btn btn-round btn-lg btn-outline-success">
               <span class="material-icons">book</span> {{ page.categories[0] | default: 'Spring' }}
             </a>
-            <h1 class="title text-white">{{ page.title }}</h1>
+            <h1 class="title text-white">{{ page.summary }}</h1>
             <h2><span class="typed-text font-weight-bold" data-typed-text='{{ page.typed | jsonify }}'></span></h2>
             <br>
 
@@ -95,7 +95,6 @@
                 <div class="tab-pane active" id="preview">
                   <div class="row">
                     <div class="col-10">
-                      <h1>{{ page.title }}</h1>
                       <article class="markdown" id="markdown"></article>
                     </div>
                     <div class="col-2">
