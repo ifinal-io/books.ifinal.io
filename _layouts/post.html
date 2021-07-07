@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+{% include head.html %}
+<body id="app" class="off-canvas-sidebar blog-posts " data-spy="scroll" data-target="#toc" data-offset="50">
+<div class="wrapper">
+
+  {% include sidebar/sidebar.html %}
+  <div class="main-panel">
+
+    <!-- Navbar -->
+    {% include navbar/navbar.html %}
+    <!-- End Navbar -->
+    <!-- End Navbar -->
+    <div class="page-header header-filter header-small" data-parallax="true"
+         style="background-image: url('{{ page.banner }}?w=1920&h=600&fit=crop'); padding-top: 100px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <a href="#" class="btn btn-round btn-lg btn-outline-success">
+              <span class="material-icons">book</span> {{ page.categories[0] | default: 'Spring' }}
+            </a>
+            <h1 class="title text-white">{{ page.title }}</h1>
+            <h2><span class="typed-text font-weight-bold" data-typed-text='{{ page.typed | jsonify }}'></span></h2>
+            <br>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid">
+      <div class="main main-raised" style="background-color: transparent">
+
+        <!--Blog Info-->
+        <section class="section section-blog-info profile-content m-0 p-0 d-none">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 ml-auto mr-auto">
+                <div class="profile">
+                  <div class="avatar">
+                    <img src="{{ site.data.authors[page.author].avatar }}" alt="Circle Image"
+                         class="img-raised rounded-circle img-fluid border-5 border-danger">
+                  </div>
+                  <div class="name">
+                    <h3 class="title">{{ site.data.authors[page.author].name }}</h3>
+                    <h6>Developer</h6>
+                  </div>
+                </div>
+                <div class="follow">
+                  <a href="https://github.com/{{ page.author }}" class="btn btn-fab btn-primary btn-round"
+                     rel="tooltip" title="" data-original-title="Follow this user" target="_blank">
+                    <span class="material-icons">add</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+
+        <!--  Blog Content -->
+        <section class="section section-text m-0 p-0">
+          <div class="card">
+            <div class="card-header card-header-primary text-white">
+              <div class="row">
+                <div class="col-6">
+                  <h4 class="card-title">{{ page.title }}</h4>
+                </div>
+                <div class="col-6">
+                  <div class="nav-tabs-navigation ">
+                    <div class="nav-tabs-wrapper ">
+                      <ul class="nav nav-tabs justify-content-end" data-tabs="tabs">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#preview" role="tab" data-toggle="tab" aria-selected="false">
+                            <span class="material-icons">preview</span>
+                            Preview
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#source" role="tab" data-toggle="tab" aria-selected="false">
+                            <span class="material-icons">code</span>
+                            Code
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content tab-space">
+                <div class="tab-pane active" id="preview">
+                  <div class="row">
+                    <div class="col-10">
+                      <h1>{{ page.title }}</h1>
+                      <article class="markdown" id="markdown"></article>
+                    </div>
+                    <div class="col-auto">
+                      <div class="sticky-sidebar sticky-top terms-sidebar" style="top: 100px;">
+                        <div class="toc" id="toc">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane markdown" id="source">
+                  <textarea id="editor" class="d-none" hidden style="width: 100%" rows="100">{% include_relative {{ page.path | split: "/" | last }} %}</textarea>
+                  <pre><code id="code"></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="container">
+      {% include footer.html %}
+    </div>
+  </div>
+</div>
+
+{% include script.html %}
+{% include jekyll/post.jekyll %}
+<script>
+
+</script>
+<script>
+  $(document).ready(function () {
+    var typedTexts = document.querySelectorAll('.typed-text');
+
+    if (typedTexts.length && window.Typed) {
+      typedTexts.forEach(function (typedText) {
+        return new window.Typed(typedText, {
+          strings: JSON.parse(typedText.getAttribute("data-typed-text")),
+          typeSpeed: 30,
+          loop: true,
+          backDelay: 1500
+        });
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

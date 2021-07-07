@@ -1,0 +1,27 @@
+logo: /assets/images/logos/spring.svg
+name: DevOps
+menus:
+  - id: final-annotation
+    icon: alternate_email
+    name: 'Final Annotation'
+    menus:
+      - id: final-annotation-core
+        name: 'Final Annotation Core'
+  - id: final-framework
+    icon: home
+    name: 'Final Framework'
+  - id: final-data
+    icon: save
+    name: 'Final Data'
+    menus:
+      - id: final-data-mybatis
+        name: Final Data Mybatis
+  - id: final-boot
+    icon: do_not_disturb_on_total_silence
+    name: 'Final Boot'
+  - id: final-cloud
+    icon: cloud
+    name: 'Final Cloud'
+  - id: auto
+    icon: hdr_auto
+    name: 'Final Auto'

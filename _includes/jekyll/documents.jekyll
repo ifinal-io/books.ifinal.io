@@ -1,0 +1,21 @@
+{% assign documents = site.documents | where_exp: "item", "item.url contains '.html' " | sort: "date" | reverse %}
+<script>
+  var app = {
+    data() {
+      return {
+        documents: [
+            {% for doc in documents %}
+          {
+            title: "{{ doc.title }}",
+            collection: "{{ doc.collection }}",
+            date: "{{ doc.date }}",
+            tags: {{ doc.tags | jsonify }},
+            url: "{{ doc.url }}"
+          },
+            {% endfor %}
+        ]
+      }
+    }
+  };
+  Vue.createApp(app).mount('#app');
+</script>

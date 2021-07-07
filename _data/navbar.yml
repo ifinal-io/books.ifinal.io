@@ -1,0 +1,23 @@
+# 导航条配置
+
+# 导航
+right:
+  - label: 首页
+    icon: home
+    type: link
+    link: /index
+  - label: 时间线
+    icon: timeline
+    type: link
+    link: /timeline
+  - label: 帮助
+    icon: help
+    type: link
+    link: /help
+  - label: 登录
+    icon: fingerprint
+    type: link
+    link: https://github.com/login/oauth/authorize?client_id=d5980c0f53133a01c696&redirect_uri=https://blog.ifinal.io/oauth/github
+
+# 显示Github角
+github-corner: true

@@ -1,0 +1,111 @@
+logo: /assets/images/logos/spring.svg
+name: Spring
+menus:
+  - id: overview
+    group: Spring
+    icon: emoji_objects
+    name: 概览
+  - id: boot
+    icon: do_not_disturb_on_total_silence
+    name: BOOT
+    menus:
+      - id: spring-application
+        name: 'SpringApplication'
+      - id: spring-application-context
+        name: 'Spring应用上下文'
+      - id: application-context-factory
+        name: 'ApplicationContextFactory'
+      - id: spring-banner
+        name: 'SpringBanner'
+      - id: spring-application-run-listener
+        name: '应用监听器'
+      - id: autoconfigure
+        name: '自动装配'
+        menus:
+          - id: spring-boot-application
+            name: '@SpringBootApplication'
+          - id: enable-auto-configuration
+            name: '@EnableAutoConfiguration'
+  - id: context
+    name: Context
+    icon: eco
+    menus:
+      - id: application-context
+        name: 'ApplicationContext'
+      - id: configurable-application-context
+        name: '应用上下文刷新流程'
+      - id: annotation-config-application-context
+        name: 'AnnotationConfigApplicationContext'
+      - id: bean-factory-post-processor
+        name: 'Bean工厂后置处理器'
+      - id: annotation
+        name: Annotation
+        menus:
+          - id: configuration-class
+            name: '配置类'
+          - id: configuration-class-parser
+            name: '配置类解析器'
+          - id: configuration-class-enhancer
+            name: '配置类增强器'
+          - id: configuration-class-post-processor
+            name: '配置类处理器'
+          - id: component-scan
+            name: '@ComponentScan'
+          - id: import
+            name: '@Import'
+          - id: import-resource
+            name: '@ImportResource'
+          - id: bean
+            name: '@Bean'
+      - id: event
+        name: Event
+        menus:
+          - id: event-listener
+            name: '@EventListener'
+          - id: application-event-publisher
+            name: 应用事件发布者
+          - id: application-event-multicaster
+            name: 应用事件多播器
+      - id: spring-factory
+        name: SpringFactory
+  - id: aop
+    name: AOP
+    icon: layers
+  - id: web
+    icon: web
+    name: WEB
+    menus:
+      - id: dispatcher-servlet
+        name: 'DispatcherServlet'
+      - id: locale-resolver
+        name: 'LocaleResolver'
+      - id: handler-execution-chain
+        name: '处理器执行链'
+      - id: web-mvc-auto-configuration
+        name: 'WebMvc自动配置'
+      - id: strategies
+        name: '九大策略初识'
+
+      - id: exception-handler
+        name: '异常处理器'
+      - id: handler-method
+        name: '处理器'
+      - id: handler-interceptor
+        name: '拦截器'
+      - id: handler-method-argument-resolver
+        name: '参数解析器'
+      - id: handler-exception-resolver
+        name: '异常解析器'
+  - id: cloud
+    icon: cloud
+    name: Cloud
+    menus:
+      - id: service-instance
+        name: '服务实例'
+  - id: security
+    name: Security
+    icon: security
+  - id: design-pattern
+    name: Pattern
+    icon: design_services
+

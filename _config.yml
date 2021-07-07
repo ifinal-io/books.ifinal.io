@@ -1,0 +1,124 @@
+title: Blog
+logo: /assets/images/logos/github.svg
+# name: Final Blog
+email: 569553292@qq.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+#  parse_block_html: true
+#  parse_span_html: true
+  syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    #    line_numbers: false # bad idea, spans don't need linenos and would inherit this option
+#    line_format: '%i'
+#    table_class: 'rouge-table'
+#    span:
+#      line_numbers: false
+#    block:
+#      line_numbers: true
+#      start_line: 1
+#  html_to_native: true
+#  start_line: 1
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+theme: minima
+encoding: UTF-8
+# 分页
+#pagination:
+#  enabled: true
+#  per_page: 5
+#  offset: 2
+#  permalink: '/page/:num/'
+#  title: ':title - page :num of :max'
+#  limit: 0
+#  sort_field: 'date'
+#  sort_reverse: true
+#  collection: 'all'
+sass:
+  sass_dir: _sass
+  style: compressed
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-github-metadata
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-coffeescript
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-optional-front-matter
+#  - jekyll-paginate
+#  - jekyll-paginate-v2
+  - jekyll-titles-from-headings
+collections_dir: docs
+collections:
+  spring:
+    output: true
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
+      output: true
+      sidebar: true
+      author: ilikly
+      type: post
+      mark:
+        pin: false
+        hot: false
+      banner: https://source.unsplash.com/random/800x400
+  - scope:
+      path: help
+    values:
+      type: page
+      sidebar: false
+  - scope:
+      path: oauth
+    values:
+      type: page
+      sidebar: false
+# 插件配置
+gist:
+  noscript: false
+readme_index:
+  enabled: true
+  remove_originals: true
+  with_frontmatter: false
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - data
+toc:
+  enable: true
+  min_level: 2
+  max_level: 4
+  headers: article h2,article h3, article h4, article h5, article h6
+  list_class: ""
+  item_class: "nav-item fs--1"
+final:
+  version: 1.0.2
+exclude:
+  - .idea/
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

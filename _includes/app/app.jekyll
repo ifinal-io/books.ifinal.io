@@ -1,0 +1,53 @@
+{% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | split: '/' %}
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        settings: {
+          theme: 'light',
+          fluid: true
+        },
+        page: {
+          collection: 'spring',
+          paths: JSON.parse('{{ paths | jsonify }}'),
+          menus: []
+        },
+        posts: {},
+
+      }
+    },
+    mounted() {
+
+      let self = this;
+
+      this.page.menus = this.page.paths.slice(1);
+
+      console.log(`menus=${JSON.stringify(this.page.menus)}`)
+
+      $.getJSON('/api/articles.api.json', function (data) {
+
+        self.posts = data;
+
+        console.log(JSON.stringify(data));
+
+        setTimeout(function () {
+          lazyload(document.querySelectorAll(".lazyload"));
+
+        }, 1000);
+
+      });
+
+
+
+    },
+    methods: {
+      changeTheme(theme) {
+        console.log(theme);
+        document.documentElement.classList.remove(this.settings.theme);
+        document.documentElement.classList.add(theme);
+        this.settings.theme = theme;
+      }
+    }
+  })
+  .mount('#app')
+</script>
