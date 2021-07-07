@@ -17,8 +17,8 @@
           <!--二级菜单-->
           <a :href="menu2.url ? menu2.url : '/' + page.collection + '/'  + menu1.id + '/' + menu2.id" class="nav-link"
              :class="page.menus.length > 2 && page.menus[0] == menu1.id && page.menus[1] == menu2.id && page.menus[2] != 'index' ? 'collapse' : ''">
-            <i class="material-icons" style="width: 30px;height: 30px;" v-html="menu2.icon"></i>
-<!--            <span class="sidebar-mini" v-html="menu2.mini ? menu2.mini :  i1 + '.' + (i2 + 1)"> P </span>-->
+<!--            <i class="material-icons" style="width: 30px;height: 30px;" v-html="menu2.icon"></i>-->
+            <span class="sidebar-mini" v-html="menu2.mini ? menu2.mini :  i1 + '.' + (i2 + 1)"> P </span>
             <span class="sidebar-normal" v-html="menu2.name"> Pricing </span>
           </a>
           <div :class="page.menus[1] == menu2.id ? 'show' : ''" :id="menu1.id +'@' + menu2.id"
