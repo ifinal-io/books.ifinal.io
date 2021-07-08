@@ -68,9 +68,9 @@ menus:
             name: 应用事件多播器
       - id: spring-factory
         name: SpringFactory
-  - id: aop
-    name: AOP
-    icon: layers
+#  - id: aop
+#    name: AOP
+#    icon: layers
   - id: web
     icon: web
     name: WEB
@@ -83,8 +83,8 @@ menus:
         name: '处理器执行链'
       - id: web-mvc-auto-configuration
         name: 'WebMvc自动配置'
-      - id: strategies
-        name: '九大策略初识'
+#      - id: strategies
+#        name: '九大策略初识'
       - id: exception-handler
         name: '异常处理器'
       - id: handler-method
@@ -93,18 +93,18 @@ menus:
         name: '拦截器'
       - id: handler-method-argument-resolver
         name: '参数解析器'
-      - id: handler-exception-resolver
-        name: '异常解析器'
-  - id: cloud
-    icon: cloud
-    name: Cloud
-    menus:
-      - id: service-instance
-        name: '服务实例'
-  - id: security
-    name: Security
-    icon: security
-  - id: design-pattern
-    name: Pattern
-    icon: design_services
+#      - id: handler-exception-resolver
+#        name: '异常解析器'
+#  - id: cloud
+#    icon: cloud
+#    name: Cloud
+#    menus:
+#      - id: service-instance
+#        name: '服务实例'
+#  - id: security
+#    name: Security
+#    icon: security
+#  - id: design-pattern
+#    name: Pattern
+#    icon: design_services
 
