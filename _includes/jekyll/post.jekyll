@@ -30,6 +30,7 @@
 
       $this.toc();
       $this.highlight();
+      $this.initHeader();
 
     },
     methods: {
@@ -190,6 +191,14 @@
         //   hljs.highlightBlock(block);
         // });
         hljs.highlightAll();
+      },
+      initHeader() {
+        console.log("初始化Header");
+        $(".markdown h2,.markdown h3").each(function () {
+          let content = $(this).text();
+          $(this).html(`<span class="content">${content}</span>`)
+          console.log(content);
+        })
       },
       gitlak() {
         var gitalk = new Gitalk({

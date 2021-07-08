@@ -13,9 +13,9 @@ Vue.createApp({
     $this.initMarkdown();
     $this.processYmal($this.markdown.ymal);
     $this.processContent($this.markdown.content);
-
     $this.toc();
     $this.highlight();
+    $this.initHeader();
 
   },
   methods: {
@@ -176,6 +176,12 @@ Vue.createApp({
       //   hljs.highlightBlock(block);
       // });
       hljs.highlightAll();
+    },
+    initHeader() {
+      console.log("初始化Header");
+      $(".markdown h2").each(function () {
+        console.log($(this).text());
+      })
     },
     gitlak() {
       var gitalk = new Gitalk({
