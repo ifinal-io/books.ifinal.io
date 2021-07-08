@@ -11,6 +11,8 @@ menus:
     menus:
       - id: spring-application
         name: 'SpringApplication'
+      - id: spring-boot-application
+        name: '@SpringBootApplication'
       - id: spring-application-context
         name: 'Spring应用上下文'
       - id: application-context-factory
@@ -22,8 +24,6 @@ menus:
       - id: autoconfigure
         name: '自动装配'
         menus:
-          - id: spring-boot-application
-            name: '@SpringBootApplication'
           - id: enable-auto-configuration
             name: '@EnableAutoConfiguration'
   - id: context
@@ -39,7 +39,7 @@ menus:
       - id: bean-factory-post-processor
         name: 'Bean工厂后置处理器'
       - id: annotation
-        name: Annotation
+        name: '@Annotation'
         menus:
           - id: configuration-class
             name: '配置类'
@@ -85,7 +85,6 @@ menus:
         name: 'WebMvc自动配置'
       - id: strategies
         name: '九大策略初识'
-
       - id: exception-handler
         name: '异常处理器'
       - id: handler-method
