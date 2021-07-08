@@ -129,4 +129,4 @@ Spring Boot的各种组件（`spring-boot-starter-*`）或自定义组件都可�
 
 `@SpringBootApplication`是一个用于标记Spring Boot应用启动类的注解，被标记的类其可以声明一个或多个**`@Bean`方法**， 同时触发**自动装配`@EnableAutoConfiguration`**和**组件扫描`@ComponentScan`**。
 
-我说清楚了没！
+我说清楚了没有！
