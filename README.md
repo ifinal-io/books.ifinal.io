@@ -12,6 +12,7 @@
 
 > 因项目托管于Github Pages，墙内用户需要自备梯子，或尝试添加以下HOSTS进行访问:
 > ```text
+> 185.199.110.153 static.ifinal.io
 > 185.199.110.153 books.ifinal.io
 > ```
 
