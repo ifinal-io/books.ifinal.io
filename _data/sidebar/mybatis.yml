@@ -1,0 +1,8 @@
+logo: /assets/img/logos/spring.svg
+name: Mybatis
+menus:
+  - id: jdbc3-key-generator
+    group: Spring
+    icon: emoji_objects
+    name: Jdbc3主键生成器
+

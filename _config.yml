@@ -65,6 +65,8 @@ collections_dir: docs
 collections:
   spring:
     output: true
+  mybatis:
+    output: true
 defaults:
   - scope:
       path: ""
