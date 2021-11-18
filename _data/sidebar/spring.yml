@@ -21,6 +21,8 @@ menus:
         name: 'SpringBanner'
       - id: spring-application-run-listener
         name: '应用监听器'
+      - id: environment-post-processor
+        name: 'EnvironmentPostProcessor'
       - id: autoconfigure
         name: '自动装配'
         menus:
@@ -93,6 +95,8 @@ menus:
         name: '拦截器'
       - id: handler-method-argument-resolver
         name: '参数解析器'
+      - id: request-mapping-handler-mapping
+        name: '请求方法映射'
 #      - id: handler-exception-resolver
 #        name: '异常解析器'
 #  - id: cloud
