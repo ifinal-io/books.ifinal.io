@@ -9,6 +9,11 @@ menus:
     icon: do_not_disturb_on_total_silence
     name: BOOT
     menus:
+      - id: quick-start
+        name: 'Quick Start'
+        menus:
+          - id: how-to-custom-spring-boot-starter
+            name: '自定义Spring Boot Starter'
       - id: spring-application
         name: 'SpringApplication'
       - id: spring-boot-application
