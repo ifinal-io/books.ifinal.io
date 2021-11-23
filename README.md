@@ -13,6 +13,8 @@
 * SpringBoot
   * 快速开始
     * [自定义Spring Boot Starter](docs/_spring/boot/quick-start/how-to-custom-spring-boot-starter.md)
+  * 自动装配
+    * [](docs/_spring/boot/autoconfigure/)
 
 ## 访问方式：
 

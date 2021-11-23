@@ -16,16 +16,19 @@ formatterOn: "@formatter:on"
 # 如何自定义Spring Boot Starter
 
 ## 方式一：通过@EnableAutoConfiguration
+
 * Step1: 定义一个需要加入SpringBoot的中组件
+
 ```java
 
-* @Configuration(proxyBeanMethods = false)
+@Configuration(proxyBeanMethods = false)
 public class WebMvcAutoConfiguration {
 //......
 }
 ```
 
 * Step2:在META-INF/spring.factories文件中声明
+
 ```properties
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
@@ -39,9 +42,10 @@ org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
 * Step1: 实现ApplicationContextInitializer接口
 
 ```java
+
 @Slf4j
 public final class FinalFrameworkApplicationContextInitializer extends
-    AbsFrameworkApplicationContextInitializer<ConfigurableApplicationContext> {
+        AbsFrameworkApplicationContextInitializer<ConfigurableApplicationContext> {
 
     public FinalFrameworkApplicationContextInitializer() {
         super(FinalFramework.class);
@@ -52,6 +56,7 @@ public final class FinalFrameworkApplicationContextInitializer extends
 ```
 
 ```java
+
 @Slf4j
 @ComponentScan
 @ImportResource({
@@ -64,6 +69,7 @@ public class FinalFramework {
 ```
 
 * Step2: 在META-INF/spring.factories文件中声明
+
 ```properties
 # ApplicationContextInitializer
 org.springframework.context.ApplicationContextInitializer=\
