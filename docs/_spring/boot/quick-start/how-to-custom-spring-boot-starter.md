@@ -70,5 +70,3 @@ org.springframework.context.ApplicationContextInitializer=\
 org.ifinalframework.context.initializer.FinalFrameworkApplicationContextInitializer,\
 ```
 
-通过ApplicationContextInitializer接口向Spring容器中注入了一个DmallBootFramework配置类，而该配置类上声明了@ComponentScan注释，因此，DmallBootFramework所在的包com.dmallframework.boot及其子包下的所有组件类都会都Spring自动扫描并加载。
-这也是dmall-boot项目的工作原理。
