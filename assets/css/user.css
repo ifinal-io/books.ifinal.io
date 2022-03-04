@@ -48,10 +48,6 @@ h1,h2,h3,h4,h5,h6 {
     color: #9c27b0;
 }
 
-@media(min-width: 991px) {
-    .navbar {
-        margin-left: 260px;
-    }
+.navbar-nav .nav-item.active .nav-link.active {
+    background-image: linear-gradient(195deg,#e91e63,#e91e63);
 }
-
-

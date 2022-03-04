@@ -1,20 +1,91 @@
 {% assign paths = page.path | replace: '_', '' | replace: '.md' : '' | split: '/'%}
 {% assign lang = paths[1] %}
-<div id="sidebar" class="sidebar" data-color="green" data-background-color="black"
-     data-image="https://static.ifinal.io/images/sidebar/sidebar-1.jpg">
-  <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 p-3  fixed-start bg-transparent" id="sidebar"
+       data-image="https://static.ifinal.io/images/sidebar/sidebar-1.jpg" style="margin-top: 70px">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-    Tip 2: you can also add an image using data-image tag
--->
-  <div class="logo">
-    <a class="simple-text logo-mini" href="#">
-      <img :src="sidebar.logo" height="30" width="30"/>
-    </a>
-    <a class="simple-text logo-normal" style="text-transform: none" href="#" v-text="sidebar.name"></a>
-  </div>
-  <div class="sidebar-wrapper">
-    {% include sidebar/sidebar-menu.html %}
-  </div>
-  <div class="sidebar-background" style="background-image: url('https://static.ifinal.io/images/sidebar/sidebar-1.jpg');"></div>
-</div>
+      Tip 2: you can also add an image using data-image tag
+  -->
+    <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+            <li class="nav-item mb-2 mt-0">
+                <a data-bs-toggle="collapse" href="#ProfileNav" class="nav-link text-dark" aria-controls="ProfileNav"
+                   role="button" aria-expanded="false">
+                    <img :src="sidebar.logo" class="avatar">
+                    <span class="nav-link-text ms-2 ps-1" v-html="sidebar.name">Brooklyn Alice</span>
+                </a>
+                <div class="collapse" id="ProfileNav" style="">
+                    <ul class="nav ">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="../../pages/pages/profile/overview.html">
+                                <span class="sidenav-mini-icon"> MP </span>
+                                <span class="sidenav-normal  ms-3  ps-1"> My Profile </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " href="../../pages/pages/account/settings.html">
+                                <span class="sidenav-mini-icon"> S </span>
+                                <span class="sidenav-normal  ms-3  ps-1"> Settings </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark " href="../../pages/authentication/signin/basic.html">
+                                <span class="sidenav-mini-icon"> L </span>
+                                <span class="sidenav-normal  ms-3  ps-1"> Logout </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <hr class="horizontal light mt-0">
+            <!--一级菜单-->
+            <li class="nav-item"
+                :class="!menu1.menus && page.menus[0] == menu1.id ? 'active' : ''"
+                v-for="(menu1,i1) in sidebar.menus">
+                <a :data-bs-toggle="menu1.menus ? 'collapse' : '' "
+                   :data-page-menus="JSON.stringify(page.menus)" :data-menu1="menu1.id"
+                   :class="page.menus[0] == menu1.id ? 'active' : ''"
+                   :href=" menu1.menus ? '#' + menu1.id : menu1.url ? menu1.url : '/' + page.collection + '/'  + menu1.id "
+                   class="nav-link text-dark "  role="button" aria-expanded="false">
+                    <i class="material-icons-round opacity-10" v-html="menu1.icon">dashboard</i>
+                    <span class="nav-link-text ms-2 ps-1" v-text="menu1.name">Dashboards</span>
+                </a>
+                <div :class="page.menus[0] == menu1.id ? 'show' : ''" :id="menu1.id" class="collapse"
+                     v-if="menu1.menus">
+                    <ul class="nav ">
+                        <!--二级菜单-->
+                        <li class="nav-item"
+                            :class="!menu2.menus && page.menus[0] == menu1.id && page.menus[1] == menu2.id && page.menus[2] != 'index' ? 'active' : ''"
+                            v-for="(menu2,i2) in menu1.menus">
+                            <a class="nav-link text-dark "
+                               :class="page.menus[0] == menu1.id && page.menus[1] == menu2.id && page.menus[2] != 'index' ? 'active' : ''"
+                               :data-bs-toggle="menu2.menus ? 'collapse' : '' " aria-expanded="false"
+                               :data-menu2="menu2.id"
+                               :href="menu2.menus ? '#' + menu1.id +'-' + menu2.id : menu2.url ? menu2.url : '/' + page.collection + '/'  + menu1.id + '/' + menu2.id"
+                            >
+                                <span class="sidenav-mini-icon" v-html="menu2.mini ? menu2.mini :  i1 + '.' + (i2 + 1)"> D </span>
+                                <span class="sidenav-normal  ms-2  ps-1" v-html="menu2.name"> Discover </span>
+                            </a>
+                            <div class="collapse" :class="page.menus[1] == menu2.id ? 'show' : ''"
+                                 :id="menu1.id +'-' + menu2.id" v-if="menu2.menus">
+                                <ul class="nav nav-sm flex-column">
+                                    <!--三级菜单-->
+                                    <li class="nav-item" :class="page.menus[0] == menu1.id && page.menus[1] == menu2.id && page.menus[2] == menu3.id ? 'active' : ''" v-for="(menu3,i3) in menu2.menus">
+                                        <a class="nav-link text-dark "
+                                           :class="page.menus.length > 2 && page.menus[0] == menu1.id && page.menus[1] == menu2.id && page.menus[2] == menu3.id && page.menus[3] != 'index' ? 'active' : ''"
+                                           :href="menu3.url ? menu3.url : '/' + page.collection + '/'  + menu1.id + '/' + menu2.id + '/' + menu3.id "
+                                           >
+                                            <span class="sidenav-mini-icon" v-html="menu3.mini ? menu2.mini : i1 + '.' + (i2 + 1) + '.' + (i3 + 1)"> Q </span>
+                                            <span class="sidenav-normal  ms-2  ps-1" v-html="menu3.name"> Quick Start </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
